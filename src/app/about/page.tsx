@@ -1,3 +1,7 @@
+import AnimatedCounter from "../../components/animations/AnimatedCounter";
+import FadeInView from "../../components/animations/FadeInView";
+import { HiLightningBolt, HiBadgeCheck } from 'react-icons/hi';
+
 export default function AboutUs() {
   const teamMembers = [
     {
@@ -6,7 +10,7 @@ export default function AboutUs() {
       responsibilities:
         "Handles backend projects and oversees overall company operations.",
       initials: "AI",
-      skills: ["Node.js", "Python", "PostgreSQL", "AWS"]
+      skills: ["Node.js", "PostgreSQL", "Azure"]
     },
     {
       name: "Satish Kumar Singh",
@@ -14,7 +18,7 @@ export default function AboutUs() {
       responsibilities:
         "Leads backend development and manages client communications.",
       initials: "SS",
-      skills: ["Java", "Spring Boot", "MongoDB", "Docker"]
+      skills: ["FastAPI", "NodeJs", "MySQL", "PostgreSQL", "MongoDB", "Docker"]
     },
     {
       name: "Md Zafar",
@@ -78,22 +82,22 @@ export default function AboutUs() {
 
       {/* Company Stats */}
       <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-        <div className="text-center">
-          <div className="text-3xl font-bold text-amber-200 mb-2">2+</div>
+        <FadeInView delay={0.1} className="text-center">
+          <AnimatedCounter end={2} suffix="+" />
           <div className="text-gray-200">Years in Business</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-amber-200 mb-2">50+</div>
+        </FadeInView>
+        <FadeInView delay={0.2} className="text-center">
+          <AnimatedCounter end={50} suffix="+" />
           <div className="text-gray-200">Projects Delivered</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-amber-200 mb-2">6</div>
+        </FadeInView>
+        <FadeInView delay={0.3} className="text-center">
+          <AnimatedCounter end={6} />
           <div className="text-gray-200">Countries Served</div>
-        </div>
-        <div className="text-center">
+        </FadeInView>
+        <FadeInView delay={0.4} className="text-center">
           <div className="text-3xl font-bold text-amber-200 mb-2">24/7</div>
           <div className="text-gray-200">Support Available</div>
-        </div>
+        </FadeInView>
       </div>
 
       {/* Team Section */}
@@ -149,9 +153,7 @@ export default function AboutUs() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
         <div className="bg-slate-700/50 backdrop-blur-sm shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-600">
           <div className="w-12 h-12 bg-amber-200 rounded-lg flex items-center justify-center mb-4">
-            <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+            <HiLightningBolt className="w-6 h-6 text-slate-800" />
           </div>
           <h3 className="text-2xl font-semibold mb-4 text-white">Our Philosophy</h3>
           <p className="text-gray-200 mb-4">
@@ -166,9 +168,7 @@ export default function AboutUs() {
         
         <div className="bg-slate-700/50 backdrop-blur-sm shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-600">
           <div className="w-12 h-12 bg-amber-200 rounded-lg flex items-center justify-center mb-4">
-            <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
+            <HiBadgeCheck className="w-6 h-6 text-slate-800" />
           </div>
           <h3 className="text-2xl font-semibold mb-4 text-white">Our Approach</h3>
           <ul className="list-disc list-inside text-gray-200 space-y-2">
@@ -186,7 +186,7 @@ export default function AboutUs() {
         <div className="bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 sm:p-12 text-white border border-slate-600">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Ready to Work With Us?</h2>
           <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-            Let's discuss your project and see how our expertise can help bring your vision to life.
+            Let&apos;s discuss your project and see how our expertise can help bring your vision to life.
           </p>
           <a href="/contact" className="inline-block px-8 py-4 bg-amber-200 text-slate-800 rounded-lg hover:bg-amber-300 transition-colors duration-200 text-lg font-medium shadow-lg">
             Get in Touch

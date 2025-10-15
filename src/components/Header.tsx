@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,9 +51,9 @@ const Header = () => {
               className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
             >
               {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
+                <HiX className="h-6 w-6" />
               ) : (
-                <Bars3Icon className="h-6 w-6" />
+                <HiMenu className="h-6 w-6" />
               )}
             </button>
           </div>

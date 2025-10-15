@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,9 +60,9 @@ export default function Navbar() {
             className="text-gray-200 hover:text-amber-200 focus:outline-none transition-colors duration-200"
           >
             {isOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <HiX className="h-6 w-6" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <HiMenu className="h-6 w-6" />
             )}
           </button>
         </div>
