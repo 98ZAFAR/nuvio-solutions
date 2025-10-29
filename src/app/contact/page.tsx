@@ -85,18 +85,22 @@ export default function ContactUs() {
       setFormData({ name: '', email: '', message: '', subject: '' });
       setErrors({});
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('❌ Form submission error:', error);
       
-      if (error.response) {
-        // Server responded with error status
-        console.error('Server error:', error.response.data);
-      } else if (error.request) {
-        // Request was made but no response received
-        console.error('Network error:', error.request);
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+          // Server responded with error status
+          console.error('Server error:', error.response.data);
+        } else if (error.request) {
+          // Request was made but no response received
+          console.error('Network error:', error.request);
+        } else {
+          // Something else happened
+          console.error('Error:', error.message);
+        }
       } else {
-        // Something else happened
-        console.error('Error:', error.message);
+        console.error('Unexpected error:', error);
       }
       
       setSubmitStatus('error');
@@ -284,7 +288,7 @@ export default function ContactUs() {
               className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
                 isSubmitting
                   ? 'bg-gray-500 cursor-not-allowed opacity-75'
-                  : 'bg-amber-600 hover:bg-amber-700'
+                  : 'bg-slate-700 hover:bg-slate-800'
               } text-white shadow-lg hover:shadow-xl`}
             >
               {isSubmitting ? (

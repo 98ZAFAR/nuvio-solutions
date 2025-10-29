@@ -1,14 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// Interface for nodemailer errors
+interface NodemailerError extends Error {
+  code?: string;
+  command?: string;
+}
+
 export async function POST(request: NextRequest) {
-  console.log('📧 Contact API called');
+  // console.log('📧 Contact API called');
   
   try {
     const body = await request.json();
     const { name, email, subject, message } = body;
     
-    console.log('📋 Form data received:', { name, email: email?.substring(0, 3) + '***', subject, messageLength: message?.length });
+    // console.log('📋 Form data received:', { name, email: email?.substring(0, 3) + '***', subject, messageLength: message?.length });
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -41,7 +47,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('✅ Validation passed, creating transporter...');
+    // console.log('✅ Validation passed, creating transporter...');
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -187,28 +193,35 @@ export async function POST(request: NextRequest) {
       throw sendError;
     }
 
-  } catch (error: any) {
-    console.error('💥 Email sending error:', {
-      message: error.message,
-      code: error.code,
-      command: error.command,
-      stack: error.stack
-    });
+  } catch (error: unknown) {
+    const nodemailerError = error as NodemailerError;
+    const errorDetails = nodemailerError instanceof Error ? {
+      message: nodemailerError.message,
+      code: nodemailerError.code,
+      command: nodemailerError.command,
+      stack: nodemailerError.stack
+    } : { message: 'Unknown error occurred' };
+    
+    console.error('💥 Email sending error:', errorDetails);
     
     let errorMessage = 'Failed to send email. Please try again later.';
     
-    if (error.code === 'EAUTH') {
-      errorMessage = 'Email authentication failed. Please check your email credentials.';
-    } else if (error.code === 'ECONNECTION') {
-      errorMessage = 'Could not connect to email server. Please try again later.';
-    } else if (error.code === 'ETIMEDOUT') {
-      errorMessage = 'Email service timeout. Please try again.';
+    if (nodemailerError instanceof Error) {
+      const errorCode = nodemailerError.code;
+      
+      if (errorCode === 'EAUTH') {
+        errorMessage = 'Email authentication failed. Please check your email credentials.';
+      } else if (errorCode === 'ECONNECTION') {
+        errorMessage = 'Could not connect to email server. Please try again later.';
+      } else if (errorCode === 'ETIMEDOUT') {
+        errorMessage = 'Email service timeout. Please try again.';
+      }
     }
     
     return NextResponse.json(
       { 
         error: errorMessage,
-        details: error.message
+        details: nodemailerError instanceof Error ? nodemailerError.message : 'Unknown error'
       },
       { status: 500 }
     );
