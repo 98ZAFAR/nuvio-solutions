@@ -39,7 +39,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-gradient-to-b from-slate-700 to-slate-600">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <FadeInView delay={0.1} className="text-center">
-            <AnimatedCounter end={50} suffix="+" />
+            <AnimatedCounter end={10} suffix="+" />
             <div className="text-gray-100">Projects Delivered</div>
           </FadeInView>
           <FadeInView delay={0.2} className="text-center">
@@ -70,7 +70,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold mb-4 text-white">Who We Are</h2>
             <p className="text-gray-100">
               Founded by three passionate engineers, Nuvio Solutions Pvt Ltd delivers cutting-edge
-              software and web solutions globally, from the US to Turkey, UAE, UK, Pakistan, and Bangladesh.
+              software and web solutions globally, from the US to Turkey, UAE, UK, India, Pakistan, and Bangladesh.
             </p>
           </FloatingCard>
 

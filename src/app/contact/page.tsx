@@ -117,12 +117,12 @@ export default function ContactUs() {
     },
     {
       title: "Call Us",
-      details: "+1 234 567 890",
+      details: "+91 81125 90073",
       icon: <HiPhone className="w-6 h-6" />
     },
     {
       title: "Location",
-      details: "123 Tech Street, San Francisco, CA 94105, USA",
+      details: "IIEST, Shibpur, Howrah, West Bengal 711103, India",
       icon: <HiLocationMarker className="w-6 h-6" />
     },
     {
@@ -320,7 +320,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-2">Address:</h3>
-                <p className="text-gray-200">123 Tech Street, San Francisco, CA 94105, USA</p>
+                <p className="text-gray-200">IIEST, Shibpur, Howrah, West Bengal 711103, India</p>
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-2">Business Hours:</h3>

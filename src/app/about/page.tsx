@@ -1,6 +1,8 @@
 import AnimatedCounter from "../../components/animations/AnimatedCounter";
 import FadeInView from "../../components/animations/FadeInView";
 import { HiLightningBolt, HiBadgeCheck } from 'react-icons/hi';
+import { FaRegHandshake, FaRegLightbulb, FaSearch } from "react-icons/fa";
+import { VscWorkspaceTrusted } from "react-icons/vsc";
 
 export default function AboutUs() {
   const teamMembers = [
@@ -49,22 +51,22 @@ export default function AboutUs() {
     {
       title: "Quality First",
       description: "We never compromise on quality. Every line of code, every design element is carefully crafted.",
-      icon: "🎯"
+      icon: <VscWorkspaceTrusted className="w-7 h-7 md:w-10 md:h-10 text-amber-200" />
     },
     {
       title: "Client-Focused",
       description: "Your success is our success. We work closely with you to understand and exceed your expectations.",
-      icon: "🤝"
+      icon: <FaRegHandshake className="w-7 h-7 md:w-10 md:h-10 text-amber-200" />
     },
     {
       title: "Innovation",
       description: "We stay ahead of technology trends to provide cutting-edge solutions for your business.",
-      icon: "💡"
+      icon: <FaRegLightbulb className="w-7 h-7 md:w-10 md:h-10 text-amber-200" />
     },
     {
       title: "Transparency",
       description: "Clear communication, honest pricing, and regular updates throughout the project lifecycle.",
-      icon: "🔍"
+      icon: <FaSearch className="w-7 h-7 md:w-10 md:h-10 text-amber-200" />
     }
   ];
 
@@ -83,11 +85,11 @@ export default function AboutUs() {
       {/* Company Stats */}
       <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
         <FadeInView delay={0.1} className="text-center">
-          <AnimatedCounter end={2} suffix="+" />
+          <AnimatedCounter end={1} suffix="+" />
           <div className="text-gray-200">Years in Business</div>
         </FadeInView>
         <FadeInView delay={0.2} className="text-center">
-          <AnimatedCounter end={50} suffix="+" />
+          <AnimatedCounter end={10} suffix="+" />
           <div className="text-gray-200">Projects Delivered</div>
         </FadeInView>
         <FadeInView delay={0.3} className="text-center">
@@ -141,7 +143,7 @@ export default function AboutUs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, idx) => (
             <div key={idx} className="bg-slate-700/50 backdrop-blur-sm shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-slate-600">
-              <div className="text-4xl mb-4">{value.icon}</div>
+              <div className="w-full flex justify-center mb-4">{value.icon}</div>
               <h3 className="text-xl font-semibold mb-3 text-white">{value.title}</h3>
               <p className="text-gray-200 text-sm">{value.description}</p>
             </div>
