@@ -18,8 +18,8 @@ export default function Home() {
           </FadeInView>
           <FadeInView delay={0.4}>
             <p className="text-lg sm:text-xl text-gray-100 mb-8 max-w-3xl mx-auto">
-              Crafting technology-driven solutions for businesses worldwide. 
-              Your trusted freelance team of expert developers and designers.
+              We architect, execute, and scale real businesses.<br />
+              Custom-coded, secure, future-proof web solutions — built exactly for you
             </p>
           </FadeInView>
           <FadeInView delay={0.6}>
@@ -100,11 +100,15 @@ export default function Home() {
             className="bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 sm:p-12 text-white border border-slate-600"
           >
             <FadeInView delay={0.5}>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Ready to Start Your Project?</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Let&apos;s Build What Your Business Deserves</h2>
             </FadeInView>
             <FadeInView delay={0.6}>
               <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-                Let us discuss your ideas and bring them to life with our expertise and passion for exceptional digital solutions.
+                If you&apos;re looking for a development team that treats your platform as a mission-critical asset — not a template website — Nuvio Solutions Pvt Ltd is the partner built for that standard.
+              </p>
+              <p className="text-amber-200 font-medium mb-6">
+                Ready to discuss your project?<br />
+                Let&apos;s start with a technical consultation.
               </p>
             </FadeInView>
             <FadeInView delay={0.7}>

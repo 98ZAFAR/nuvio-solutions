@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { HiMail, HiPhone, HiLocationMarker, HiClock, HiPaperAirplane } from 'react-icons/hi';
+import { HiMail, HiPhone, HiLocationMarker, HiPaperAirplane } from 'react-icons/hi';
 import FadeInView from '../../components/animations/FadeInView';
 import FloatingCard from '../../components/animations/FloatingCard';
 import AnimatedButton from '../../components/animations/AnimatedButton';
@@ -116,19 +116,14 @@ export default function ContactUs() {
       icon: <HiMail className="w-6 h-6" />
     },
     {
-      title: "Call Us",
-      details: "+91 81125 90073",
+      title: "Call & WhatsApp",
+      details: "+91 81125 90073 | +91 90647 67147",
       icon: <HiPhone className="w-6 h-6" />
     },
     {
       title: "Location",
-      details: "IIEST, Shibpur, Howrah, West Bengal 711103, India",
+      details: "Based in IIEST Shibpur, Howrah, West Bengal, India - working with clients globally",
       icon: <HiLocationMarker className="w-6 h-6" />
-    },
-    {
-      title: "Response Time",
-      details: "Within 24 hours",
-      icon: <HiClock className="w-6 h-6" />
     }
   ];
 
@@ -147,7 +142,7 @@ export default function ContactUs() {
 
       {/* Contact Info Cards */}
       <FadeInView delay={0.2}>
-        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {contactInfo.map((info, idx) => (
             <FloatingCard key={idx} className="bg-slate-700/50 backdrop-blur-sm shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-slate-600">
               <div className="w-12 h-12 bg-amber-200 rounded-lg flex items-center justify-center mx-auto mb-4 text-slate-800">
@@ -319,13 +314,13 @@ export default function ContactUs() {
                 <p className="text-gray-200">Nuvio Solutions Pvt Ltd</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">Address:</h3>
-                <p className="text-gray-200">IIEST, Shibpur, Howrah, West Bengal 711103, India</p>
+                <h3 className="font-semibold text-white mb-2">Location:</h3>
+                <p className="text-gray-200">Based in IIEST Shibpur, Howrah, West Bengal, India - working with clients globally</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">Business Hours:</h3>
-                <p className="text-gray-200">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
-                <p className="text-gray-200">Weekend: Emergency support available</p>
+                <h3 className="font-semibold text-white mb-2">Contact:</h3>
+                <p className="text-gray-200">Call & WhatsApp: +91 81125 90073 | +91 90647 67147</p>
+                <p className="text-gray-200">Email: contact@nuviosolutions.com</p>
               </div>
             </div>
             
@@ -352,19 +347,31 @@ export default function ContactUs() {
           {/* Quick FAQ */}
           <FadeInView delay={0.8}>
             <FloatingCard className="bg-slate-700/50 backdrop-blur-sm shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-600">
-            <h2 className="text-2xl font-semibold mb-6 text-white">Quick FAQ</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-white">FAQs</h2>
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-white mb-2">How quickly can you start my project?</h3>
-                <p className="text-gray-200 text-sm">We typically start new projects within 1-2 weeks after initial consultation and agreement.</p>
+                <p className="text-gray-200 text-sm">Project kickoff usually begins within 1–2 weeks after the proposal is finalized and the onboarding formalities are completed.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">Do you provide ongoing support?</h3>
-                <p className="text-gray-200 text-sm">Yes, we offer maintenance and support packages for all our projects.</p>
+                <h3 className="font-semibold text-white mb-2">Do you provide ongoing support and maintenance?</h3>
+                <p className="text-gray-200 text-sm">Yes. We offer optional monthly/annual maintenance plans that cover updates, security patches, performance checks, and minor content changes.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">What&apos;s your project process?</h3>
-                <p className="text-gray-200 text-sm">Discovery → Planning → Development → Testing → Launch → Support</p>
+                <h3 className="font-semibold text-white mb-2">What is your typical project timeline?</h3>
+                <p className="text-gray-200 text-sm">Since we build every website fully custom with clean, scalable code — the timeline depends on the project&apos;s technical complexity:</p>
+                <ul className="list-disc list-inside text-gray-200 text-sm mt-2 ml-4 space-y-1">
+                  <li><strong>Basic marketing or portfolio website</strong> — 2–4 weeks</li>
+                  <li><strong>Business website with custom functionality</strong> — 4–8 weeks</li>
+                  <li><strong>Advanced web platforms or e-commerce systems</strong> — 2–6+ months</li>
+                </ul>
+                <p className="text-gray-200 text-sm mt-2">
+                  On average, most small to mid-scale client projects go live within <strong>4–6 weeks</strong>, while enterprise-level builds take longer due to engineering depth.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-2">How do you handle communication during the project?</h3>
+                <p className="text-gray-200 text-sm">We provide regular updates via email or Slack and schedule review calls at key milestones. A dedicated project manager stays in touch throughout.</p>
               </div>
             </div>
             </FloatingCard>
